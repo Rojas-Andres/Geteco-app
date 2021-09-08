@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from getecoapp.Index import *
 
 urlpatterns = [
+    url(r'^$', Index, name='index'),
     path('admin/', admin.site.urls),
+    
+    path('geteco/', include('getecoapp.urls')),
 ]
